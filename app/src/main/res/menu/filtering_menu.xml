@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/dropDown1"
+        android:title="나의 별점 순"/>
+
+    <item
+        android:id="@+id/dropDown2"
+        android:title="나의 검색어 순"/>
+
+    <item
+        android:id="@+id/dropDown3"
+        android:title="나의 주문 기록 순"/>
+
+    <item
+        android:id="@+id/dropDown4"
+        android:title="나의 리뷰 키워드 순"/>
+
+</menu>

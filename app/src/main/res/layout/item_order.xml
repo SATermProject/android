@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="order"
+            type="com.konkuk.sadelivery.entity.OrderHistory" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                android:background="@drawable/shape_rect_top_r10"
+                android:backgroundTint="#340061D3"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{order.restaurant.name}"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{order.food.name}"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?android:attr/textColorSecondary" />
+
+                <com.willy.ratingbar.BaseRatingBar
+                    android:id="@+id/ratingView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:srb_isIndicator="false"
+                    app:srb_rating="0"
+                    app:srb_starHeight="20dp"
+                    app:srb_starPadding="0dp"
+                    android:layout_gravity="end"
+                    app:srb_starWidth="20dp"
+                    app:srb_stepSize="1" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:hint="리뷰를 작성해보세요"
+                    android:layout_marginTop="20dp"
+                    app:boxStrokeWidth="0.5dp"
+                    app:boxStrokeColor="@color/blank"
+                    android:textColorHint="#AFAFAF"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:textSize="12sp"
+                        android:gravity="start"
+                        android:id="@+id/content"
+                        android:layout_height="match_parent"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                style="?attr/borderlessButtonStyle"
+                android:layout_gravity="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:id="@+id/saveBtn"
+                android:text="저장하기" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
